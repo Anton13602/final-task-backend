@@ -62,13 +62,13 @@ export const findTasks = async (req: Request, res: Response) => {
         if (oneTask.description.toUpperCase().includes(searchRequest)) {
           return true;
         }
-        const users = [...allUsers.filter(user => user._id === new ObjectId(oneTask.userId) || oneTask.users.includes(user._id))];
-        for (const user of users) {
+        // const users = [...allUsers.filter(user => user._id === new ObjectId(oneTask.userId) || oneTask.users.includes(user._id))];
+        // for (const user of users) {
 
-          if (user.name.toUpperCase().includes(searchRequest)) {
-            return true;
-          }
-        }
+        //   if (user.name.toUpperCase().includes(searchRequest)) {
+        //     return true;
+        //   }
+        // }
         return false;
 
       }));
